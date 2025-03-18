@@ -1,0 +1,178 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+:root{
+  --main-color: rgb(255, 255, 255);
+  --secondary-color: rgb(168, 165, 165);
+  --thirdy-color: rgb(35, 36, 35);
+}
+
+body{
+  padding-top: 140px;
+  background-color: var(--main-color);
+}
+
+.container{
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+.nav{
+  background-color: var(--thirdy-color);
+  color: var(--main-color);
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  top: 0;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: default;
+  align-items: center;
+  z-index: 1000;
+  transition: transform 0.5s ease-in-out;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.377);
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--main-color);
+  padding: 10px;
+}
+
+/* Ícone do menu (hambúrguer) */
+.menu-toggle {
+  display: none; /* Oculta o menu por padrão */
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.nav.hide{
+  transform: translateY(-100%);
+}
+
+.nav ul{
+  display: flex;
+  gap: 20px;
+}
+
+.nav ul a{
+  text-decoration: none;
+  color: var(--main-color);
+  padding: 20px;
+}
+
+.nav ul a:hover{
+ color: var(--secondary-color);
+ background-color: var(--main-color);
+ border-radius: 20px;
+}
+
+#home{
+  background-color: var(--main-color);
+  color: var(--thirdy-color);
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nome{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 40px;
+  margin-left: 10%;
+  cursor: default;
+}
+
+.nome h1{
+  font-size: 2rem;
+}
+
+
+.imgTec{ 
+  gap: 5px;
+  padding: 40px;
+}
+
+.imgTec img{
+  width: 100px;
+  height: 100px;
+  background-color: var(--thirdy-color);
+  border-radius: 10px;
+}
+
+
+#sobre{
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  height: 500px;
+}
+
+#projetos{
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  height: 500px;
+}
+
+#contato{
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  height: 500px;
+  text-align: center;
+}
+
+@media (max-width: 768px){
+
+.imgTec img{
+  width: 50px;
+  height: 50px;
+}
+
+.nome{
+  width: 200px;
+}
+
+.menu-toggle {
+  display: block; /* Mostra o ícone */
+}
+
+.nav-links {
+  display: none; /* Esconde os links inicialmente */
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: var(--secondary-color);
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(0px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.nav-links.show {
+  display: flex; /* Exibe o menu quando ativo */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav ul a:hover{
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+  border-radius: 0px;
+  transition: 0.5s ease-in-out;
+ }
+}
+
